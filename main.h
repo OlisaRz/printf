@@ -1,23 +1,30 @@
-#ifndef HEADER_MAIN
-#define HEADER_MAIN
+#ifndef HOLBERTON_H
+#define HOLBERTON_H
+
 #include <stdarg.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <limits.h>
+#include <string.h>
+
+/**
+ * struct func_type - type structure
+ * @t: pointer to the argument
+ * @f: pointer-function associated with the argument
+ */
+typedef struct func_type
+{
+	char *t;
+	int (*f)(va_list);
+} func_t;
+
+int (*get_func(const char *format))(va_list);
 int _putchar(char c);
-void _puts(char *str);
-int _strlen(char *s);
 int _printf(const char *format, ...);
-char *convert_to(char representation[], unsigned int num, int base);
-int function_manager(char c, va_list arg);
-int _switch(char c, va_list arg);
-int print_character(va_list arg);
-int print_sign(va_list arg, int base);
-int print_unsign(va_list arg, int base);
-int print_string(va_list arg);
-int print_ptr(va_list arg);
-int print_rot13(va_list arg);
-int print_rev(va_list arg);
-int print_base16_upper_lower(va_list arg, char *representation);
-int loop_format(va_list arg, const char *string);
-int call_function_manager(char aux, va_list arg);
-int check_percent(int *flag, char aux);
+int print_str(va_list args);
+int print_char(va_list args);
+int print_pct(va_list args);
+int print_dec(va_list args);
 
 #endif
