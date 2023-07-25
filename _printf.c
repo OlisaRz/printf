@@ -5,11 +5,13 @@
 /**
  * valid_spec - check if a character is part of the valid format specifier
  * @form - character to be checked
+ * @outputfor_c: conversion specifier
+ * @outputfor_s: conversion specifier
  * Return: 0 if valid, 1 if not valid
  */
 int valid_spec(const char *format)
 {
-	const char *spec = "mat";
+	const char *spec = "csdi";
 	int k = 0;
 
 	while (spec[k] != '\0')
