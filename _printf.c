@@ -1,6 +1,36 @@
 #include <unistd.h>
 #include "main.h"
 /**
+ * _print_binary - Function to print unsigned int
+ * @num: The number to print in binary
+ * Return: The characters printed
+ */
+int _print_binary(unsigned int num)
+{
+	int len = 0;
+	unsigned int mask = 1 << (sizeof(unsigned int) * 8 - 1);
+	int leading_zeroes = 1;
+
+	while (mask)
+	{
+		char bit = ((num & mask) ? '1' : '0');
+		if (bit == '1')
+			leading_zeroes = 0;
+		if (!leading_zeroes)
+		{
+			write(1, &bit, 1);
+			len++;
+		}
+		mask >>= 1;
+	}
+	if (leading_zeroes)
+	{
+		write(1, "0", 1);
+		len++;
+	}
+	return (len);
+}
+/**
  * _printf - The printf function
  * @format: The format string
  * Return: The number of characters printed
