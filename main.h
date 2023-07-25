@@ -26,6 +26,8 @@ int outputfor_d(int);
 int outputfor_b(unsigned int);
 int outputfor_u(unsigned int);
 int outputfor_o(unsigned int);
+int outputfor_x(unsigned int);
+int outputfor_i(unsigned int);
 
 int rev_string(char *);
 int format_x(unsigned int, unsigned int);
