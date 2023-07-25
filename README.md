@@ -20,4 +20,16 @@ You dont have to handle precision
 You dont have to handle the length modifiers
 
 Task 1
+1. Education is when you read the fine print. Experience is what you get if you don't
+mandatory
+Handle the following conversion specifiers:
+
+d
+i
+You dont have to handle the flag characters
+You dont have to handle field width
+You dont have to handle precision
+You dont have to handle the length modifiers
+
+Task 2
 
