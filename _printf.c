@@ -11,7 +11,7 @@
  */
 int valid_spec(const char *format)
 {
-	const char *spec = "csdi";
+	const char *spec = "rbdicuxXos";
 	int k = 0;
 
 	while (spec[k] != '\0')
