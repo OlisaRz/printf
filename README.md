@@ -99,3 +99,12 @@ You dont have to handle the flag characters
 You dont have to handle field width
 You dont have to handle precision
 You dont have to handle the length modifiers
+
+Task 7
+Handle the following flag characters for non-custom conversion specifiers:
+
++
+space
+#
+
+Task 8
