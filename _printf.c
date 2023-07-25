@@ -24,6 +24,7 @@ int _printf(const char *format, ...)
 			if (*format == 'c')
 			{
 				char c = (char)va_arg(args, int);
+
 				write(1, &c, 1);
 				len++;
 			}
@@ -31,6 +32,7 @@ int _printf(const char *format, ...)
 			{
 				char *str = va_arg(args, char *);
 				int i = 0;
+
 				while (str && str[i])
 				{
 					write(1, &str[i], 1);
@@ -57,5 +59,5 @@ int _printf(const char *format, ...)
 		format++;
 	}
 	va_end(args);
-	return len;
+	return (len);
 }
