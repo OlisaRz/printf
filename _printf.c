@@ -43,40 +43,7 @@ int _printf(const char *format, ...)
 			else if (*format == 'd' || *format == 'i')
 			{
 				int num = va_arg(args, int);
-				int temp = num;
-				int digits = 0;
-				char negative = 0;
-
-				if (num == 0)
-				{
-					digits = 1;
-				}
-				else
-				{
-					if (num < 0)
-					{
-						negative = 1;
-						num = -num;
-						len++;
-					}
-					while (temp != 0)
-					{
-						digits++;
-						temp /= 10;
-					}
-				}
-				while (digits > 0)
-				{
-					char digit = (num % 10) + '0';
-					write(1, &digit, 1);
-					len++;
-					num /= 10;
-					digits--;
-				}
-				if (negative)
-				{
-					write(1, "-", 1);
-				}
+				len += _print_number(num);
 			}
 			else if (*format == '%')
 			{
