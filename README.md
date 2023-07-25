@@ -53,3 +53,16 @@ alex@ubuntu:~/c/printf$ ./a.out
 1100010
 alex@ubuntu:~/c/printf$
 
+Task 3
+Handle the following conversion specifiers:
+
+u
+o
+x
+X
+You dont have to handle the flag characters
+You dont have to handle field width
+You dont have to handle precision
+You dont have to handle the length modifiers
+
+Task 4
