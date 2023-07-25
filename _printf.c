@@ -31,37 +31,80 @@ int _printf(const char *format, ...)
 	size_t x, num, count, length;
 	char *s;
 
-	var_start(args, format);
+	va_start(args, format);
 	num = count = length = 0;
+
 	while (*format)
 	{
 		if (num == 0)
 		{
 			if (*format != '%')
 			{
-				format_c(*format);
+				outputfor_c(*format);
 				count++;
-			}
+			} 
 			else
 			{
 				num = 1;
 			}
-			else
+		} 
+		else
+		{
+			if (valid_spec(format))
 			{
-				if (valid_spec(format))
-					length = _putchar(format);
+				length = _putchar(format);
 				switch (*format)
 				{
 					case 'c':
 						{
 							x = va_arg(args, int);
-							length = format_c(x);
+							length = outputfor_c(x);
 							break;
 						}
 					case 's':
 						{
 							s = va_arg(args, char *);
-							length = format_s(s);
+							length = outputfor_s(s);
+							break;
+						}
+					case 'd':
+						{
+							x = va_arg(args, int);
+							length = outputfor_d(x);
+							break;
+						}
+					case 'i':
+						{
+							x = va_arg(args, int);
+							length = outputfor_i(x);
+							break;
+						}
+					case 'b':
+						{
+							x = va_arg(args, int);
+							length = outputfor_b(x);
+							break;
+						}
+					case 'o':
+						{
+							x = va_arg(args, int);
+							length = outputfor_o(x);
+							break;
+						}
+					case 'X':
+						{
+							x = va_arg(args, int);
+							break;
+						}
+					case 'x':
+						{
+							x = va_arg(args, int);
+							break;
+						}
+					case 'r':
+						{
+							s = va_arg(args, char *);
+							length = rev_string(s);
 							break;
 						}
 					default:
@@ -72,10 +115,13 @@ int _printf(const char *format, ...)
 				count += length;
 				num = 0;
 			}
-			format++;
 		}
-		va_end(args);
-		return (count);
+		format++;
 	}
+	va_end(args);
+	return (count);
+}
+	
+	
 
-
+	
