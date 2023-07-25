@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 		{
 			p++;
 		}
-		p = get width(p, &params, ap);
+		p = get_width(p, &params, ap);
 		p = get_precision(p, &params, ap);
 		if (get_modifier(p, &params))
 			p++;
@@ -41,4 +41,4 @@ int _printf(const char *format, ...)
 	_putchar(BUF_FLUSH);
 	va_end(ap);
 	return (sum);
-}
+
