@@ -92,3 +92,10 @@ alex@ubuntu:~/c/printf$ ./a.out
 Best\x0ASchool
 alex@ubuntu:~/c/printf$
 
+Task 6
+Handle the following conversion specifier: p.
+
+You dont have to handle the flag characters
+You dont have to handle field width
+You dont have to handle precision
+You dont have to handle the length modifiers
