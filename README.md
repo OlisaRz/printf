@@ -66,3 +66,8 @@ You dont have to handle precision
 You dont have to handle the length modifiers
 
 Task 4
+4. Nothing in fine print is ever good news
+Use a local buffer of 1024 chars in order to call write as little as possible.
+
+Task 5
+
