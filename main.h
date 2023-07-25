@@ -10,18 +10,6 @@ int _printf(const char *format, ...);
 int outputfor_c(char);
 int outputfor_s(char *);
 
-/**
- * _putchar - prints the character value
- * @format: passed to the function
- * Return: 1
- */
-int _putchar(const char *format)
-{
-	char c = *format;
-	write(1, &c, 1);
-	return (1);
-}
-
 int outputfor_d(int);
 int outputfor_b(unsigned int);
 int outputfor_u(unsigned int);

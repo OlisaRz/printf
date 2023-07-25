@@ -23,6 +23,18 @@ int valid_spec(const char *format)
 	return (1);
 }
 /**
+ * _putchar - prints the character value
+ * @format: format passed to the function
+ * Return: 1
+ */
+int _putchar(const char *format)
+{
+	char c = *format;
+
+	write(1, &c, 1);
+	return (1);
+}
+/**
  * _printf - prints to standard output
  * @format: Passes a single character
  * Return: Returns the number of characters printed
