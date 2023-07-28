@@ -11,12 +11,12 @@
 int _print_integer(int num)
 {
 	char buffer[20]; /* Assuming 20 characters is enough for most integers */
-	int len;
+	int length;
 	
-	len = sprintf(buffer, "%d", num);
-	write(1, buffer, len);
+	length = sprintf(buffer, "%d", num);
+	write(1, buffer, length);
 
-	return len;
+	return length;
 }
 
 /**
@@ -27,7 +27,7 @@ int _print_integer(int num)
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int printed_chars = 0;
+	int expected_char = 0;
 	char ch;
 
 	va_start(args, format);
@@ -42,37 +42,37 @@ int _printf(const char *format, ...)
 				case 'c':
 					ch = (char)va_arg(args, int);
 					write(1, &ch, 1);
-					printed_chars++;
+					expected_char++;
 					break;
 				case 's':
-					printed_chars += _print_string(va_arg(args, char *));
+					expected_char += _print_string(va_arg(args, char *));
 					break;
 				case '%':
 					write(1, &(*format), 1);
-					printed_chars++;
+					expected_char++;
 					break;
 				case 'd':
 				case 'i':
-					printed_chars += _print_integer(va_arg(args, int));
+					expected_char += _print_integer(va_arg(args, int));
 					break;
 				default:
 					write(1, "%", 1);
 					write(1, &(*format), 1);
-					printed_chars += 2;
+					expected_char += 2;
 					break;
 			}
 		}
 		else
 		{
 			write(1, &(*format), 1);
-			printed_chars++;
+			expected_char++;
 		}
 		format++;
 	}
 
 	va_end(args);
 	
-	return printed_chars;
+	return expected_char;
 }
 
 /**
@@ -83,16 +83,16 @@ int _printf(const char *format, ...)
  */
 int _print_string(char *str)
 {
-	int len = 0;
+	int length = 0;
 
 	if (str == NULL)
 		str = "(null)";
 
-	while (str[len])
+	while (str[length])
 	{
-		write(1, &str[len], 1);
-		len++;
+		write(1, &str[length], 1);
+		length++;
 	}
 
-	return len;
+	return length;
 }
