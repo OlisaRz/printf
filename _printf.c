@@ -44,6 +44,9 @@ int _printf(const char *format, ...)
 					write(1, &ch, 1);
 					expected_char++;
 					break;
+				case 'b':
+					expected_char += _print_binary(va_arg(args, unsigned int));
+					break;
 				case 's':
 					expected_char += _print_string(va_arg(args, char *));
 					break;
