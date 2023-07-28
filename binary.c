@@ -12,7 +12,7 @@ int _print_binary(unsigned int num)
 	char binary_buffer[65];
 	int length = 0;
 
-	if(num == 0)
+	if (num == 0)
 	{
 		binary_buffer[0] = '0';
 		length = 1;
@@ -20,12 +20,14 @@ int _print_binary(unsigned int num)
 	else
 	{
 		int i;
+
 		for (i = 0; i < 64; i++)
 		{
 			binary_buffer[i] = (num & 1) ? '1' : '0';
 			num >>= 1;
 		}
 		binary buffer[i] = '\0';
+
 		length = 64;
 	}
 	write(1, binary_buffer, length);
