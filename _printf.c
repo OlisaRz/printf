@@ -12,11 +12,11 @@ int _print_integer(int num)
 {
 	char buffer[20]; /* Assuming 20 characters is enough for most integers */
 	int length;
-	
+
 	length = sprintf(buffer, "%d", num);
 	write(1, buffer, length);
 
-	return length;
+	return (length);
 }
 
 /**
@@ -43,9 +43,6 @@ int _printf(const char *format, ...)
 					ch = (char)va_arg(args, int);
 					write(1, &ch, 1);
 					expected_char++;
-					break;
-				case 'b':
-					expected_char += _print_binary(va_arg(args, unsigned int));
 					break;
 				case 's':
 					expected_char += _print_string(va_arg(args, char *));
@@ -74,8 +71,8 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(args);
-	
-	return expected_char;
+
+	return (expected_char);
 }
 
 /**
@@ -97,5 +94,5 @@ int _print_string(char *str)
 		length++;
 	}
 
-	return length;
+	return (length);
 }
